@@ -3,24 +3,28 @@
     "id": 1,
     "mediaTitle": "Instagram",
     "url": "https://www.instagram.com/levanikapanadze__",
-    "mediaIcon": "/instagram.png"
+    "mediaIcon": "/instagram.png",
+    "bgGradient": "from-[#f09433] via-[#e6683c] to-[#bc1888]"
   },
   {
     "id": 2,
     "mediaTitle": "Github",
     "url": "https://github.com/LEVANIKAPANADZE?tab=overview&from=2025-08-01&to=2025-08-24",
-    "mediaIcon": "/github.png"
+    "mediaIcon": "/github.png",
+    "bgGradient": "from-[#24292e] to-[#3b3b3b]"
   },
   {
     "id": 3,
     "mediaTitle": "Facebook",
     "url": "https://www.facebook.com/levani.kapanadze.64576",
-    "mediaIcon": "/facebook.png"
+    "mediaIcon": "/facebook.png",
+    "bgGradient": "from-[#1877f2] to-[#4a90e2]"
   },
   {
     "id": 4,
     "mediaTitle": "Discord",
     "url": "https://discord.com/users/1273698547803623541",
-    "mediaIcon": "/discord.png"
+    "mediaIcon": "/discord.png",
+    "bgGradient": "from-[#7289da] to-[#99aab5]"
   }
 ]
