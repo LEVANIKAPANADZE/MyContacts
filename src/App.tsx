@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import data from "../data.json";
 
@@ -40,9 +41,21 @@ export default function App() {
       <header className="sticky top-0 w-full bg-black/30 backdrop-blur-xl border-b border-white/8 py-6 flex flex-col items-center z-40">
         <motion.h1
           initial={{ opacity: 0, y: -18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent drop-shadow-md"
+          animate={{ opacity: 1, y: [0, -4, 0] }}
+          transition={{
+            duration: 1.2,
+            ease: "easeOut",
+            repeat: Infinity,
+            repeatType: "mirror",
+            repeatDelay: 4,
+          }}
+          whileHover={{
+            y: [0, -10, 0, -6, 0],
+            rotate: [0, -2, 0, 2, 0],
+            transition: { duration: 0.6 },
+          }}
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent drop-shadow-md cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           Levani Kapanadze
         </motion.h1>
@@ -70,7 +83,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.6, ease: "easeOut" }}
               whileHover={{ y: -10, scale: 1.03 }}
-              className={`relative w-full max-w-[320px] p-6 sm:p-8 rounded-3xl shadow-2xl overflow-hidden ${element.bgGradient}`}
+              className={`relative w-full max-w-[320px] p-6 sm:p-8 rounded-3xl shadow-2xl overflow-hidden ${element.bgGradient} cursor-pointer`}
               style={{ WebkitTapHighlightColor: "transparent" }}
               role="button"
               tabIndex={0}
@@ -103,16 +116,18 @@ export default function App() {
                       e.stopPropagation();
                       window.open(element.url, "_blank", "noopener,noreferrer");
                     }}
-                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 font-semibold tracking-wide uppercase text-sm sm:text-base shadow-lg focus:outline-none focus:ring-4 focus:ring-white/20"
+                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 font-semibold tracking-wide uppercase text-sm sm:text-base shadow-lg focus:outline-none focus:ring-4 focus:ring-white/20 cursor-pointer"
                   >
                     Visit Page
                   </button>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigator.clipboard?.writeText(element.url);
+                      try {
+                        navigator.clipboard?.writeText(element.url);
+                      } catch {}
                     }}
-                    className="p-3 rounded-xl bg-white/6 hover:bg-white/8 ring-1 ring-white/6"
+                    className="p-3 rounded-xl bg-white/6 hover:bg-white/8 ring-1 ring-white/6 cursor-pointer"
                     aria-label="Copy link"
                   >
                     <svg
