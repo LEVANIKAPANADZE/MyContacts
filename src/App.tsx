@@ -3,7 +3,11 @@ import data from "../data.json";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white flex flex-col overflow-hidden">
+    <div
+      className="relative min-h-screen 
+    bg-gradient-to-br from-gray-950 via-gray-900 to-black 
+    text-white flex flex-col overflow-hidden"
+    >
       <motion.div
         aria-hidden
         initial={{ opacity: 0 }}
@@ -106,10 +110,7 @@ export default function App() {
                 <h3 className="text-xl sm:text-2xl font-semibold text-center bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
                   {element.mediaTitle}
                 </h3>
-                <p
-                  className="text-xs text-white/70 
-                text-center max-w-[260px]"
-                >
+                <p className="text-xs text-white/70 text-center max-w-[260px]">
                   {element.description || element.mediaTitle}
                 </p>
                 <div className="w-full flex items-center gap-3">
