@@ -66,7 +66,7 @@ export default function App() {
           transition={{ delay: 0.3, duration: 1 }}
           className="mt-2 text-sm sm:text-base text-white/60 tracking-wide"
         >
-          curated links · projects · socials
+          socials
         </motion.p>
       </header>
 
