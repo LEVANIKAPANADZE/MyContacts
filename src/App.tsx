@@ -105,9 +105,6 @@ export default function App() {
                 <h3 className="text-2xl font-semibold text-center bg-gradient-to-r from-white via-gray-200 to-gray-100 bg-clip-text text-transparent">
                   {element.mediaTitle}
                 </h3>
-                <p className="text-sm text-white/70 text-center max-w-[260px] leading-relaxed">
-                  {element.description || element.mediaTitle}
-                </p>
                 <div className="w-full flex items-center gap-3 mt-3">
                   <button
                     onClick={(e) => {
